@@ -1,0 +1,187 @@
+/* =====================================================================
+   Laura Méndez Cuéllar — website styles
+   ---------------------------------------------------------------------
+   All colours and fonts are defined once, in the :root block below.
+   Change a value there and the whole site follows.
+   ===================================================================== */
+
+:root{
+  /* colours */
+  --ink:#17251F;        /* body text — almost black, with a green cast */
+  --ink-soft:#4C5C53;   /* secondary text */
+  --paper:#FBFAF7;      /* page background */
+  --sage:#E7ECE3;       /* quiet blocks, photo mount */
+  --umber:#6F5B44;      /* labels and dates */
+  --accent:#C2410C;     /* links and marks — used sparingly */
+  --line:#D8DED4;       /* hairlines */
+
+  /* type */
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Karla","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+
+  --measure:34rem;      /* comfortable reading width */
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:400 1.0625rem/1.65 var(--body);
+}
+
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------------------------------------------------------------------
+   Page grid — a narrow rail on the left, content on the right
+   --------------------------------------------------------------------- */
+.page{
+  max-width:1080px;
+  margin:0 auto;
+  padding:0 clamp(1.25rem,4vw,3rem) 5rem;
+  display:grid;
+  grid-template-columns:15rem minmax(0,1fr);
+  gap:clamp(2rem,6vw,4.5rem);
+  align-items:start;
+}
+
+/* ---------------------------------------------------------------------
+   Left rail — portrait, name, navigation, links
+   --------------------------------------------------------------------- */
+.rail{position:sticky;top:2.5rem;padding:clamp(2rem,5vw,3.5rem) 0 2rem}
+
+.portrait{
+  width:100%;aspect-ratio:4/5;object-fit:cover;
+  background:var(--sage);
+  border:1px solid var(--line);
+  box-shadow:9px 9px 0 var(--sage);
+}
+
+.rail .name{
+  margin:2.25rem 0 .35rem;
+  font:400 1.5rem/1.1 var(--display);
+  font-variation-settings:"SOFT" 0,"WONK" 1;
+  letter-spacing:-.015em;
+}
+.rail .role{margin:0;color:var(--ink-soft);font-size:.9375rem;line-height:1.45}
+
+/* the small typewritten slip, borrowed from a herbarium sheet */
+.label{
+  margin-top:1.5rem;padding-top:.85rem;border-top:1px solid var(--ink);
+  font:400 .6875rem/1.9 var(--mono);
+  letter-spacing:.06em;text-transform:uppercase;color:var(--umber);
+}
+.label a{text-decoration:none;border-bottom:1px solid var(--line)}
+.label a:hover{color:var(--accent);border-color:var(--accent)}
+
+.nav{margin:1.75rem 0 0;padding:0;list-style:none}
+.nav li{margin:0 0 .55rem}
+.nav a{
+  text-decoration:none;font-size:.9375rem;color:var(--ink-soft);
+  border-bottom:1px solid transparent;padding-bottom:1px;
+}
+.nav a:hover{color:var(--ink);border-color:var(--accent)}
+.nav a[aria-current="page"]{color:var(--ink);font-weight:500}
+.nav a[aria-current="page"]::before{
+  content:"";display:inline-block;width:.4rem;height:.4rem;
+  background:var(--accent);margin-right:.5rem;vertical-align:.12em;
+}
+
+/* ---------------------------------------------------------------------
+   Content
+   --------------------------------------------------------------------- */
+.content{padding:clamp(2rem,5vw,3.5rem) 0 0;min-width:0}
+
+.eyebrow{
+  margin:0 0 1.1rem;
+  font:500 .6875rem/1 var(--mono);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--umber);
+}
+.eyebrow::before{
+  content:"";display:inline-block;width:.45rem;height:.45rem;
+  background:var(--accent);margin-right:.6rem;vertical-align:.02em;
+}
+
+h1{
+  margin:0 0 1.25rem;
+  font:400 clamp(2.1rem,5.5vw,3rem)/1.06 var(--display);
+  font-variation-settings:"SOFT" 0,"WONK" 1;
+  letter-spacing:-.02em;
+}
+h2{
+  margin:3.25rem 0 1rem;
+  font:600 1.3125rem/1.25 var(--display);
+  letter-spacing:-.01em;
+}
+h3{margin:2.25rem 0 .4rem;font:500 1.0625rem/1.35 var(--body)}
+
+p{margin:0 0 1.1rem;max-width:var(--measure)}
+.lede{
+  font:400 1.3125rem/1.45 var(--display);
+  font-style:italic;color:var(--ink-soft);
+  max-width:30rem;margin-bottom:1.75rem;
+}
+.content a{
+  text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;text-decoration-color:var(--line);
+}
+.content a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+
+/* species names, set in italic serif */
+.sp{font-family:var(--display);font-style:italic}
+
+/* dated entries — positions, publications, talks */
+.entry{
+  display:grid;grid-template-columns:6rem minmax(0,1fr);gap:1.5rem;
+  padding:1.15rem 0;border-top:1px solid var(--line);max-width:44rem;
+}
+.entry .when{
+  font:500 .8125rem/1.75 var(--mono);color:var(--umber);letter-spacing:.02em;
+}
+.entry p{margin:0;max-width:none}
+.entry strong{font-weight:500}
+.entry .note{margin-top:.3rem;font-size:.9375rem;color:var(--ink-soft)}
+
+/* a quiet block for pull-outs */
+.card{
+  background:var(--sage);padding:1.5rem 1.6rem;margin:2rem 0;
+  max-width:var(--measure);
+}
+.card p:last-child{margin-bottom:0}
+
+.foot{
+  margin-top:4.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
+  font:400 .75rem/1.8 var(--mono);letter-spacing:.04em;color:var(--umber);
+  max-width:none;
+}
+.foot a{text-decoration:none;border-bottom:1px solid var(--line)}
+
+/* ---------------------------------------------------------------------
+   Small screens
+   --------------------------------------------------------------------- */
+@media (max-width:860px){
+  .page{grid-template-columns:1fr;gap:0}
+  .rail{position:static;padding-bottom:0;display:grid;
+        grid-template-columns:7.5rem minmax(0,1fr);gap:1.5rem;align-items:end}
+  .portrait{box-shadow:6px 6px 0 var(--sage)}
+  .rail .name{margin-top:0}
+  .label{grid-column:1/-1;margin-top:1.25rem}
+  .nav{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;margin-top:1.25rem}
+  .nav li{margin:0}
+  .content{padding-top:2.5rem}
+  .entry{grid-template-columns:1fr;gap:.25rem}
+}
+
+/* ---------------------------------------------------------------------
+   Motion — one quiet entrance, switched off when not wanted
+   --------------------------------------------------------------------- */
+@media (prefers-reduced-motion:no-preference){
+  .rail,.content{animation:rise .5s ease-out both}
+  .content{animation-delay:.06s}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
