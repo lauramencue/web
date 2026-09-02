@@ -13,59 +13,74 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div class="page">
 
 <!-- ====================================================================
-     LEFT RAIL — the same on every page.
+     TOP NAV — the same on every page.
      If you change something here, copy the change into the other
      .html files as well.
      ==================================================================== -->
-<aside class="rail">
-  <img class="portrait" src="assets/img/laura-portrait.jpg" alt="Dr. Laura Méndez Cuéllar">
-  <p class="name">Dr.&nbsp;Laura&nbsp;Méndez<br>Cuéllar</p>
-  <p class="role">Evolutionary ecologist &amp; macroecologist</p>
-
-  <ul class="nav">
-    <li><a href="index.html" aria-current="page">About</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="teaching.html">Teaching &amp; outreach</a></li>
-    <li><a href="contact.html">Contact</a></li>
+<header class="topnav">
+  <a class="brand" href="index.html">Dr. Laura Méndez Cuéllar</a>
+  <ul>
+    <li><a class="navlink" href="index.html" aria-current="page">Home</a></li>
+    <li><a class="navlink" href="research.html">Research</a></li>
+    <li><a class="navlink" href="publications.html">Publications</a></li>
+    <li><a class="navlink" href="teaching.html">Teaching &amp; outreach</a></li>
+    <li><a class="navlink" href="contact.html">Contact</a></li>
   </ul>
+</header>
+<!-- ===================== end of top nav =============================== -->
 
-  <div class="label">
-    Marburg, Germany<br>
-    <a href="https://orcid.org/0000-0001-8155-5929" target="_blank" rel="noopener">ORCID</a> ·
-    <a href="https://www.researchgate.net/profile/Laura-Mendez-9" target="_blank" rel="noopener">ResearchGate</a> ·
-    <a href="https://www.linkedin.com/in/laura-m%C3%A9ndez-cu%C3%A9llar-59424aa9/" target="_blank" rel="noopener">LinkedIn</a><br>
-    <a href="CV.pdf" target="_blank" rel="noopener">Curriculum vitae</a>
+<!-- ====================================================================
+     HERO — homepage only. Four photos crossfade on a loop; see the
+     comment above .hero-slide in assets/css/style.css for how to add
+     or remove a slide.
+     ==================================================================== -->
+<section class="hero">
+  <img class="hero-slide" src="assets/img/hero-weevil.jpg" alt="A weevil on a leaf, Madagascar">
+  <img class="hero-slide" src="assets/img/hero-fungus.jpg" alt="A white jelly fungus on a tree trunk">
+  <img class="hero-slide" src="assets/img/hero-palms-fieldwork.jpg" alt="Laura Méndez in a Hyphaene fan-palm habitat, Madagascar">
+  <img class="hero-slide" src="assets/img/hero-madagascar-pond.jpg" alt="A village pond fringed by palms at dusk, Madagascar">
+  <div class="hero-overlay">
+    <p class="hero-eyebrow">Evolutionary ecology · Macroecology</p>
+    <h1>Dr. Laura Méndez Cuéllar</h1>
   </div>
-</aside>
-<!-- ===================== end of left rail ============================ -->
+</section>
+<!-- ===================== end of hero ==================================== -->
 
-<main class="content">
+<main>
+<div class="page">
 
-  <p class="eyebrow">Evolutionary ecology · Macroecology</p>
-  <h1>Dr. Laura Méndez Cuéllar</h1>
+  <div class="about">
+    <img class="portrait" src="assets/img/laura-portrait.jpg" alt="Dr. Laura Méndez Cuéllar">
+    <div>
+      <p class="lede">Why do plants grow where they do — and what stays behind in
+      their genomes once the animals that carried their seeds are gone?</p>
 
-  <p class="lede">Why do plants grow where they do — and what stays behind in
-  their genomes once the animals that carried their seeds are gone?</p>
+      <p>I am a biologist working between evolutionary ecology, macroecology and
+      population genomics. My research combines spatial and genomic data to ask how
+      biodiversity is distributed, and how it changes — across landscapes, and
+      across both deep and very recent time.</p>
 
-  <p>I am a biologist working between evolutionary ecology, macroecology and
-  population genomics. My research combines spatial and genomic data to ask how
-  biodiversity is distributed, and how it changes — across landscapes, and
-  across both deep and very recent time.</p>
+      <p>Since 2025 I have been a postdoctoral researcher and lecturer in the
+      <a href="https://www.uni-marburg.de/de/fb17/fachgebiete/biodivpflanzen/ag-zizka" target="_blank" rel="noopener">Biodiversity
+      of Plants group</a> at the University of Marburg. Before that I worked at the
+      Helmholtz Centre for Environmental Research (UFZ) in Halle on PaDRE, a project
+      on the patterns and drivers of regional plant extinctions, and completed my
+      PhD at the German Centre for Integrative Biodiversity Research (iDiv)
+      Halle-Jena-Leipzig on palms with large fruits in Madagascar.</p>
 
-  <p>Since 2025 I have been a postdoctoral researcher and lecturer in the
-  <a href="https://www.uni-marburg.de/de/fb17/fachgebiete/biodivpflanzen/ag-zizka" target="_blank" rel="noopener">Biodiversity
-  of Plants group</a> at the University of Marburg. Before that I worked at the
-  Helmholtz Centre for Environmental Research (UFZ) in Halle on PaDRE, a project
-  on the patterns and drivers of regional plant extinctions, and completed my
-  PhD at the German Centre for Integrative Biodiversity Research (iDiv)
-  Halle-Jena-Leipzig on palms with large fruits in Madagascar.</p>
+      <p>Along the way I helped build a molecular lab, led fieldwork in Madagascar,
+      taught master's courses and supervised students.</p>
 
-  <p>Along the way I helped build a molecular lab, led fieldwork in Madagascar,
-  taught master's courses and supervised students.</p>
+      <p class="links">
+        <a href="CV.pdf" target="_blank" rel="noopener">Curriculum vitae</a> ·
+        <a href="https://orcid.org/0000-0001-8155-5929" target="_blank" rel="noopener">ORCID</a> ·
+        <a href="https://www.researchgate.net/profile/Laura-Mendez-9" target="_blank" rel="noopener">ResearchGate</a> ·
+        <a href="https://www.linkedin.com/in/laura-m%C3%A9ndez-cu%C3%A9llar-59424aa9/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+  </div>
 
   <h2>Positions</h2>
 
@@ -158,8 +173,9 @@
   <p class="foot">
     Published with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
   </p>
+</div>
 </main>
 
-</div>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>

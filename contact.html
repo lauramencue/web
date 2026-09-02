@@ -13,33 +13,22 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div class="page">
 
-<!-- ====================== LEFT RAIL — same on every page ============== -->
-<aside class="rail">
-  <img class="portrait" src="assets/img/laura-portrait.jpg" alt="Dr. Laura Méndez Cuéllar">
-  <p class="name">Dr.&nbsp;Laura&nbsp;Méndez<br>Cuéllar</p>
-  <p class="role">Evolutionary ecologist &amp; macroecologist</p>
-
-  <ul class="nav">
-    <li><a href="index.html">About</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="teaching.html">Teaching &amp; outreach</a></li>
-    <li><a href="contact.html" aria-current="page">Contact</a></li>
+<!-- ====================== TOP NAV — same on every page ================= -->
+<header class="topnav">
+  <a class="brand" href="index.html">Dr. Laura Méndez Cuéllar</a>
+  <ul>
+    <li><a class="navlink" href="index.html">Home</a></li>
+    <li><a class="navlink" href="research.html">Research</a></li>
+    <li><a class="navlink" href="publications.html">Publications</a></li>
+    <li><a class="navlink" href="teaching.html">Teaching &amp; outreach</a></li>
+    <li><a class="navlink" href="contact.html" aria-current="page">Contact</a></li>
   </ul>
+</header>
+<!-- ===================== end of top nav ================================ -->
 
-  <div class="label">
-    Marburg, Germany<br>
-    <a href="https://orcid.org/0000-0001-8155-5929" target="_blank" rel="noopener">ORCID</a> ·
-    <a href="https://www.researchgate.net/profile/Laura-Mendez-9" target="_blank" rel="noopener">ResearchGate</a> ·
-    <a href="https://www.linkedin.com/in/laura-m%C3%A9ndez-cu%C3%A9llar-59424aa9/" target="_blank" rel="noopener">LinkedIn</a><br>
-    <a href="CV.pdf" target="_blank" rel="noopener">Curriculum vitae</a>
-  </div>
-</aside>
-<!-- ===================== end of left rail ============================ -->
-
-<main class="content">
+<main>
+<div class="page">
 
   <p class="eyebrow">Contact</p>
   <h1>Get in touch</h1>
@@ -49,7 +38,7 @@
 
   <div class="card">
     <p><strong>Email</strong><br>
-    <a href="mailto:laura.mendez@biologie.uni-marburg.de" target="_blank" rel="noopener">laura.mendez@biologie.uni-marburg.de</a></p>
+    <a href="mailto:laura.mendez@biologie.uni-marburg.de">laura.mendez@biologie.uni-marburg.de</a></p>
     <p><strong>Where</strong><br>
     Biodiversity of Plants, Department of Biology<br>
     Philipps-Universität Marburg<br>
@@ -81,15 +70,6 @@
     </div>
   </div>
 
-  <!-- Add more profiles the same way, for example Google Scholar or Bluesky:
-  <div class="entry">
-    <p class="when">Scholar</p>
-    <div>
-      <p><a href="PASTE-LINK-HERE" target="_blank" rel="noopener">Google Scholar</a></p>
-    </div>
-  </div>
-  -->
-
   <h2>Languages</h2>
 
   <p>Spanish (native), English (fluent), German, and some French and
@@ -98,8 +78,9 @@
   <p class="foot">
     Published with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
   </p>
+</div>
 </main>
 
-</div>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>

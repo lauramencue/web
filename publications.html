@@ -13,33 +13,22 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div class="page">
 
-<!-- ====================== LEFT RAIL — same on every page ============== -->
-<aside class="rail">
-  <img class="portrait" src="assets/img/laura-portrait.jpg" alt="Dr. Laura Méndez Cuéllar">
-  <p class="name">Dr.&nbsp;Laura&nbsp;Méndez<br>Cuéllar</p>
-  <p class="role">Evolutionary ecologist &amp; macroecologist</p>
-
-  <ul class="nav">
-    <li><a href="index.html">About</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="publications.html" aria-current="page">Publications</a></li>
-    <li><a href="teaching.html">Teaching &amp; outreach</a></li>
-    <li><a href="contact.html">Contact</a></li>
+<!-- ====================== TOP NAV — same on every page ================= -->
+<header class="topnav">
+  <a class="brand" href="index.html">Dr. Laura Méndez Cuéllar</a>
+  <ul>
+    <li><a class="navlink" href="index.html">Home</a></li>
+    <li><a class="navlink" href="research.html">Research</a></li>
+    <li><a class="navlink" href="publications.html" aria-current="page">Publications</a></li>
+    <li><a class="navlink" href="teaching.html">Teaching &amp; outreach</a></li>
+    <li><a class="navlink" href="contact.html">Contact</a></li>
   </ul>
+</header>
+<!-- ===================== end of top nav ================================ -->
 
-  <div class="label">
-    Marburg, Germany<br>
-    <a href="https://orcid.org/0000-0001-8155-5929" target="_blank" rel="noopener">ORCID</a> ·
-    <a href="https://www.researchgate.net/profile/Laura-Mendez-9" target="_blank" rel="noopener">ResearchGate</a> ·
-    <a href="https://www.linkedin.com/in/laura-m%C3%A9ndez-cu%C3%A9llar-59424aa9/" target="_blank" rel="noopener">LinkedIn</a><br>
-    <a href="CV.pdf" target="_blank" rel="noopener">Curriculum vitae</a>
-  </div>
-</aside>
-<!-- ===================== end of left rail ============================ -->
-
-<main class="content">
+<main>
+<div class="page">
 
   <p class="eyebrow">Publications</p>
   <h1>Publications</h1>
@@ -51,6 +40,18 @@
 
   <!-- TO ADD A PAPER: copy one whole block from <div class="entry"> to
        </div>, paste it at the top of the list and edit the text. -->
+
+  <div class="entry">
+    <p class="when">2026</p>
+    <div>
+      <p>Kambach, S., Jandt, U., Acosta, A. T. R. <em>et al.</em> — 81
+      authors, including <strong>Méndez, L.</strong> — Habitat-specific
+      trends in taxonomic, functional, and phylogenetic diversity in European
+      plant communities over a century. <em>Nature Communications</em> 17,
+      4208.</p>
+      <p class="note"><a href="https://doi.org/10.1038/s41467-026-72112-5" target="_blank" rel="noopener">doi.org/10.1038/s41467-026-72112-5</a></p>
+    </div>
+  </div>
 
   <div class="entry">
     <p class="when">2025</p>
@@ -145,15 +146,6 @@
   <div class="entry">
     <p class="when">In prep.</p>
     <div>
-      <p>Kambach, S., Bruelheide, H., <strong>Méndez, L.</strong>, Jandt, U.
-      Integrating national Red Lists and vegetation plot time series to assess
-      plant biodiversity trends across Europe.</p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <p class="when">In prep.</p>
-    <div>
       <p>Overcast, I., Calderon-Sanou, I., Chase, J., Creer, S.,
       Dominguez-Garcia, V., Hagen, O., Hickerson, M. J., Jörger-Hickfang, T.,
       Krehenwinkel, H., Lennon, J., <strong>Méndez, L.</strong>, Méndez, M.,
@@ -178,8 +170,9 @@
   <p class="foot">
     Published with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
   </p>
+</div>
 </main>
 
-</div>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
