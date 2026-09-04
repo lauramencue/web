@@ -1,58 +1,46 @@
-# How to apply this redesign to your local clone
+# Research page redesign — how to apply
 
-You should already have these files from the earlier version — don't touch them,
-they're not included here:
+Four files here:
 
-    CV.pdf
-    assets/img/laura-portrait.jpg
-    robots.txt
-    .nojekyll
-    README.md
+    research.html               REPLACE — now a short overview + 3-card grid
+    research-evolution.html     NEW — "Biodiversity patterns & evolution"
+    research-genetics.html      NEW — "Genetic diversity & population change"
+    research-conservation.html  NEW — "Biodiversity change & conservation"
+    assets/css/style.css        REPLACE — same as before, plus the card-grid styles at the end
 
-Everything in this zip either REPLACES a file you already have, or is brand new.
-Copy all of it into your cloned repo folder, overwriting when asked:
-
-    index.html              REPLACE
-    research.html           REPLACE
-    publications.html       REPLACE
-    teaching.html           REPLACE
-    contact.html            REPLACE
-    assets/css/style.css    REPLACE
-    assets/js/site.js       NEW
-    assets/img/hero-weevil.jpg              NEW
-    assets/img/hero-fungus.jpg              NEW
-    assets/img/hero-palms-fieldwork.jpg     NEW
-    assets/img/hero-madagascar-pond.jpg     NEW
-
-Then, in a terminal, inside your repo folder:
+Copy these into your repo, overwriting `research.html` and `assets/css/style.css`,
+adding the three new files alongside your other pages (same folder as
+`research.html`, not in a subfolder). Then:
 
     git add -A
-    git commit -m "Redesign: top navigation, rotating photo header"
+    git commit -m "Research: three-line overview with dedicated pages"
     git push
 
-Give GitHub Pages a minute to rebuild, then reload your site.
+## What moved where
 
-## What changed
+Your old research.html had five sections. They're now split up:
 
-- The left sidebar is gone. Navigation is now a bar across the top, on every page.
-- The homepage has a full-width photo header at the top, cycling through four of
-  your photos (the weevil, the fungus, you in the palm habitat, and the
-  Madagascar pond scene) with your name over it.
-- Everything else — the bio, Positions, Education, Research, Publications,
-  Teaching, Contact — is the same content as before, just reflowed into a single
-  wider column now that there's no sidebar eating the left third of the page.
-- Two small extras that were already planned: list entries (Positions,
-  Publications, Talks, etc.) get a subtle orange highlight on hover, and they
-  fade in gently as you scroll down a page. Both quietly do nothing if
-  JavaScript is off or "reduce motion" is set — the content just shows normally.
+- "Ghosts of the megafauna" + "Fieldwork"  → research-evolution.html
+- "Genomes, maps and the tools in between" → research-genetics.html
+- "Where species disappear first"          → research-conservation.html (plus
+  a new short paragraph mentioning the VascularPlantsNRL database)
+- "Methods & tools" was split: the genomics-specific tools list moved into
+  research-genetics.html; the spatial/lab/computing parts, which apply across
+  all three lines, stayed on the research.html overview page.
 
-## Adding a fifth photo to the header rotation later
+Nothing was deleted — every sentence from the old page is still here somewhere.
 
-1. Add a new `<img class="hero-slide" src="assets/img/your-photo.jpg" alt="...">`
-   line inside the `<section class="hero">` block in `index.html`.
-2. In `assets/css/style.css`, find the comment above `.hero-slide:nth-child(1)`
-   — it explains the exact numbers to change for 5 slides instead of 4.
+## Changing a card's photo or destination
 
-## Editing text, adding a publication, etc.
+In research.html, each card is one block like this:
 
-Same as before — see the original README.md in your repo, none of that changed.
+    <a class="rline" href="research-evolution.html">
+      <img src="assets/img/hero-palms-fieldwork.jpg" alt="...">
+      <h3>Biodiversity patterns &amp; evolution</h3>
+      <p>How interactions, ecological strategies...</p>
+    </a>
+
+Swap the `src` for a different photo already in `assets/img/`, or the `href`
+to point somewhere else. The photos currently used are re-used from the
+homepage header — feel free to add three new topic-specific ones instead
+(same sizing note as before: roughly 4:3, doesn't need to be huge).
