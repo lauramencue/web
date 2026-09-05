@@ -35,10 +35,15 @@
      margins, text stays centred between them. On narrow screens the two
      photos drop below the text instead (see the media query in
      assets/css/style.css).
-     SWAP PHOTOS: change the two src= paths below.
+     SWAP PHOTOS: change the src= on each <img>.
+     PHOTO CREDIT: edit the text inside each <figcaption>. Leave a
+     figcaption empty (or delete it) if a photo doesn't need a credit.
      ==================================================================== -->
 <section class="research-split">
-  <img class="side-photo left" src="assets/img/fieldwork-palm-left.jpg" alt="Laura Méndez examining a giant palm frond in the field">
+  <figure class="side-photo left">
+    <img src="assets/img/fieldwork-palm-left.jpg" alt="Laura Méndez examining a giant palm frond in the field">
+    <figcaption>Photo: [Vonona Randrianasolo]</figcaption>
+  </figure>
   <div class="split-text">
     <p class="lede">Evolutionary ecology · Macroecology ·
     Conservation</p>
@@ -55,7 +60,10 @@
     functional traits, and phylogenies to assess how these affect biodiversity
     patterns, evolutionary changes, and extinctions in time and space.</p>
   </div>
-  <img class="side-photo right" src="assets/img/fieldwork-palm-right.jpg" alt="Laura Méndez standing beneath a giant palm in the field">
+  <figure class="side-photo right">
+    <img src="assets/img/fieldwork-palm-right.jpg" alt="Laura Méndez standing beneath a giant palm in the field">
+    <figcaption>Photo: [Vonona Randrianasolo]</figcaption>
+  </figure>
 </section>
 <!-- ===================== end of research split ========================= -->
 

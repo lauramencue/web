@@ -257,13 +257,20 @@ p{margin:0 0 1.1rem;max-width:var(--measure)}
   max-width:88rem;margin:0 auto;
   padding:clamp(2.5rem,6vw,4rem) clamp(1.25rem,4vw,3rem) 0;
 }
-.research-split .side-photo.left{grid-area:photo1}
-.research-split .side-photo.right{grid-area:photo2}
+.research-split figure.side-photo{margin:0;position:relative}
+.research-split figure.side-photo.left{grid-area:photo1}
+.research-split figure.side-photo.right{grid-area:photo2}
 .research-split .split-text{grid-area:text;min-width:0}
-.research-split img{
+.research-split figure.side-photo img{
   width:100%;height:100%;object-fit:cover;display:block;
   border:1px solid var(--line);
 }
+.research-split figcaption{
+  position:absolute;right:.6rem;bottom:.6rem;
+  font:400 .6875rem/1 var(--mono);letter-spacing:.02em;color:var(--paper);
+  background:rgba(23,37,31,.6);padding:.3rem .55rem;border-radius:2px;
+}
+.research-split figcaption:empty{display:none}
 .research-split .lede{margin-bottom:1.1rem}
 
 @media (max-width:900px){
@@ -273,5 +280,6 @@ p{margin:0 0 1.1rem;max-width:var(--measure)}
       "text text"
       "photo1 photo2";
   }
-  .research-split img{aspect-ratio:3/4;height:auto}
+  .research-split figure.side-photo img{aspect-ratio:3/4;height:auto}
+  .research-split figcaption{font-size:.625rem;padding:.2rem .45rem}
 }
