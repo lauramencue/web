@@ -30,11 +30,13 @@
 <main>
 
 <!-- ====================================================================
-     RESEARCH SPLIT — lives outside .page on purpose. The text column is
-     locked to the same width as the card row below it (52rem) no matter
-     how wide the screen is; the two photo columns absorb whatever space
-     is left on either side. On narrow screens all three photos drop
-     below the text instead (see the media query in assets/css/style.css).
+     RESEARCH SPLIT — everything (intro text AND "Main research lines")
+     now lives in the CENTER column of one grid, together. That's on
+     purpose: the two photo columns stretch to match the height of
+     whatever's in that center column, so if the cards live outside this
+     section, the photos stop at the height of the short intro text alone
+     and leave a gap before the cards. Keeping the cards inside means the
+     photos run the full height of everything together.
      SWAP PHOTOS: change the src= on each <img>.
      PHOTO CREDIT: edit the text inside a <figcaption>. Leave one empty
      (or delete it) if a photo doesn't need a credit.
@@ -60,6 +62,39 @@
     approaches. I particularly enjoy linking species interactions,
     functional traits, and phylogenies to assess how these affect biodiversity
     patterns, evolutionary changes, and extinctions in time and space.</p>
+
+    <h2>Main research lines</h2>
+
+    <!-- TO CHANGE A CARD'S PHOTO: replace the src on its <img> line.
+         TO CHANGE ITS DESTINATION: replace the href on its <a class="rline"> line. -->
+    <div class="research-lines">
+
+      <a class="rline" href="research-evolution.html">
+        <img src="assets/img/megafrugivores.png" alt="Figure 1 from Méndez et al. 2022">
+        <h3>Biodiversity patterns &amp; evolution</h3>
+        <p>How biotic interactions (e.g., frugivory, root-associated fungi),
+        ecological strategies and the environment shape biodiversity.</p>
+      </a>
+
+      <a class="rline" href="research-genetics.html">
+        <img src="assets/img/connectivity.png" alt="Figure 3 from Méndez et al. 2024">
+        <h3>Genetic diversity &amp; population change</h3>
+        <p>How populations change through space and time, from demographic
+        history to contemporary decline.</p>
+      </a>
+
+      <a class="rline" href="research-conservation.html">
+        <img src="assets/img/IUCN.png" alt="threat categories of Agrostemma githago accross Europe and european map showing latest RL in Europe">
+        <h3>Biodiversity change &amp; conservation</h3>
+        <p>Understanding biodiversity loss and improving the data and tools we
+        use to conserve it.</p>
+      </a>
+
+    </div>
+
+    <p class="foot">
+      Published with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    </p>
   </div>
 
   <div class="side-stack">
@@ -76,41 +111,6 @@
 </section>
 <!-- ===================== end of research split ========================= -->
 
-<div class="page">
-
-  <h2>Main research lines</h2>
-
-  <!-- TO CHANGE A CARD'S PHOTO: replace the src on its <img> line.
-       TO CHANGE ITS DESTINATION: replace the href on its <a class="rline"> line. -->
-  <div class="research-lines">
-
-    <a class="rline" href="research-evolution.html">
-      <img src="assets/img/megafrugivores.png" alt="Figure 1 from Méndez et al. 2022">
-      <h3>Biodiversity patterns &amp; evolution</h3>
-      <p>How biotic interactions (e.g., frugivory, root-associated fungi),
-      ecological strategies and the environment shape biodiversity.</p>
-    </a>
-
-    <a class="rline" href="research-genetics.html">
-      <img src="assets/img/connectivity.png" alt="Figure 3 from Méndez et al. 2024">
-      <h3>Genetic diversity &amp; population change</h3>
-      <p>How populations change through space and time, from demographic
-      history to contemporary decline.</p>
-    </a>
-
-    <a class="rline" href="research-conservation.html">
-      <img src="assets/img/IUCN.png" alt="threat categories of Agrostemma githago accross Europe and european map showing latest RL in Europe">
-      <h3>Biodiversity change &amp; conservation</h3>
-      <p>Understanding biodiversity loss and improving the data and tools we
-      use to conserve it.</p>
-    </a>
-
-  </div>
-
-  <p class="foot">
-    Published with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
-  </p>
-</div>
 </main>
 
 <script src="assets/js/site.js" defer></script>
