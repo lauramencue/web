@@ -30,19 +30,32 @@
 <main>
 <div class="page">
 
-  <p class="lede">Evolutionary ecology · Macroecology · Conservation</p>
+  <!-- Text + a stacked pair of photos, side by side. The whole block spans
+       the full page width, same as .research-lines below — the text column
+       just takes up whatever's left after the image column.
+       SWAP PHOTOS: change the two src= paths below to whatever you'd like here. -->
+  <div class="research-intro">
+    <div>
+      <p class="lede">Evolutionary ecology · Macroecology · Conservation</p>
 
-  <p>My research often starts with collecting data, either in the field, 
-  from botanical collections or from existing biodiversity databases, such as GBIF. 
-  Depending on the question, I generate molecular data using approaches 
-  such as ddRADseq or metabarcoding, and combine these with information 
-  on species traits, environmental conditions and 
-  conservation assessments. I then integrate and analyse these different 
-  sources of information using bioinformatics, phylogenetic and spatial 
-  analyses, linear mixed effect models, species distribution models and other 
-  approaches. I particularly enjoy linking species interactions, 
-  functional traits, and phylogenies to assess how these affect biodiversity 
-  patterns, evolutionary changes, and extinctions in time and space.</p>
+      <p>My research often starts with collecting data, either in the field,
+      from botanical collections or from existing biodiversity databases, such as GBIF.
+      Depending on the question, I generate molecular data using approaches
+      such as ddRADseq or metabarcoding, and combine these with information
+      on species traits, environmental conditions and
+      conservation assessments. I then integrate and analyse these different
+      sources of information using bioinformatics, phylogenetic and spatial
+      analyses, linear mixed effect models, species distribution models and other
+      approaches. I particularly enjoy linking species interactions,
+      functional traits, and phylogenies to assess how these affect biodiversity
+      patterns, evolutionary changes, and extinctions in time and space.</p>
+    </div>
+
+    <div class="stack">
+      <img src="assets/img/laura-portrait.jpg" alt="Laura Méndez Cuéllar">
+      <img src="assets/img/megafrugivores.png" alt="Figure 1 from Méndez et al. 2022">
+    </div>
+  </div>
 
   <h2>Main research lines</h2>
 
@@ -53,7 +66,7 @@
     <a class="rline" href="research-evolution.html">
       <img src="assets/img/megafrugivores.png" alt="Figure 1 from Méndez et al. 2022">
       <h3>Biodiversity patterns &amp; evolution</h3>
-      <p>How biotic interactions (e.g., frugivory, root-associated fungi), 
+      <p>How biotic interactions (e.g., frugivory, root-associated fungi),
       ecological strategies and the environment shape biodiversity.</p>
     </a>
 
@@ -70,6 +83,8 @@
       <p>Understanding biodiversity loss and improving the data and tools we
       use to conserve it.</p>
     </a>
+
+  </div>
 
   <p class="foot">
     Published with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
