@@ -28,34 +28,38 @@
 <!-- ===================== end of top nav ================================ -->
 
 <main>
-<div class="page">
 
-  <!-- Text + a stacked pair of photos, side by side. The whole block spans
-       the full page width, same as .research-lines below — the text column
-       just takes up whatever's left after the image column.
-       SWAP PHOTOS: change the two src= paths below to whatever you'd like here. -->
-  <div class="research-intro">
-    <div>
-      <p class="lede">Evolutionary ecology · Macroecology · Conservation</p>
+<!-- ====================================================================
+     RESEARCH SPLIT — lives outside .page on purpose, so it isn't capped
+     at the normal 52rem reading width. Two tall photos sit in the side
+     margins, text stays centred between them. On narrow screens the two
+     photos drop below the text instead (see the media query in
+     assets/css/style.css).
+     SWAP PHOTOS: change the two src= paths below.
+     ==================================================================== -->
+<section class="research-split">
+  <img class="side-photo left" src="assets/img/fieldwork-palm-left.jpg" alt="Laura Méndez examining a giant palm frond in the field">
+  <div class="split-text">
+    <p class="lede">Evolutionary ecology · Macroecology ·
+    Conservation</p>
 
-      <p>My research often starts with collecting data, either in the field,
-      from botanical collections or from existing biodiversity databases, such as GBIF.
-      Depending on the question, I generate molecular data using approaches
-      such as ddRADseq or metabarcoding, and combine these with information
-      on species traits, environmental conditions and
-      conservation assessments. I then integrate and analyse these different
-      sources of information using bioinformatics, phylogenetic and spatial
-      analyses, linear mixed effect models, species distribution models and other
-      approaches. I particularly enjoy linking species interactions,
-      functional traits, and phylogenies to assess how these affect biodiversity
-      patterns, evolutionary changes, and extinctions in time and space.</p>
-    </div>
-
-    <div class="stack">
-      <img src="assets/img/laura-portrait.jpg" alt="Laura Méndez Cuéllar">
-      <img src="assets/img/megafrugivores.png" alt="Figure 1 from Méndez et al. 2022">
-    </div>
+    <p>My research often starts with collecting data, either in the field,
+    from botanical collections or from existing biodiversity databases, such as GBIF.
+    Depending on the question, I generate molecular data using approaches
+    such as ddRADseq or metabarcoding, and combine these with information
+    on species traits, environmental conditions and
+    conservation assessments. I then integrate and analyse these different
+    sources of information using bioinformatics, phylogenetic and spatial
+    analyses, linear mixed effect models, species distribution models and other
+    approaches. I particularly enjoy linking species interactions,
+    functional traits, and phylogenies to assess how these affect biodiversity
+    patterns, evolutionary changes, and extinctions in time and space.</p>
   </div>
+  <img class="side-photo right" src="assets/img/fieldwork-palm-right.jpg" alt="Laura Méndez standing beneath a giant palm in the field">
+</section>
+<!-- ===================== end of research split ========================= -->
+
+<div class="page">
 
   <h2>Main research lines</h2>
 

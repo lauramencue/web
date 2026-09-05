@@ -243,22 +243,35 @@ p{margin:0 0 1.1rem;max-width:var(--measure)}
 .rline.no-link:hover img{opacity:1}
 .rline.no-link:hover h3{border-color:transparent}
 
+
 /* ---------------------------------------------------------------------
-   Research intro — text beside a stacked pair of photos, on research.html
+   Research split — homepage-hero-style layout for the research.html
+   intro: two tall photos in the side margins, text centred between them.
+   Lives outside .page on purpose, so it can use the full viewport width.
    --------------------------------------------------------------------- */
-.research-intro{
-  display:grid;grid-template-columns:minmax(0,1fr) 14rem;
-  gap:clamp(2rem,5vw,3.5rem);align-items:start;
-  max-width:none;margin-bottom:1rem;
+.research-split{
+  display:grid;
+  grid-template-columns:minmax(9rem,18vw) minmax(0,1fr) minmax(9rem,18vw);
+  grid-template-areas:"photo1 text photo2";
+  gap:clamp(1.5rem,3vw,3rem);
+  max-width:88rem;margin:0 auto;
+  padding:clamp(2.5rem,6vw,4rem) clamp(1.25rem,4vw,3rem) 0;
 }
-.research-intro .lede,
-.research-intro p{max-width:none}
-.research-intro .stack{display:grid;gap:1rem}
-.research-intro .stack img{
-  width:100%;aspect-ratio:4/3;object-fit:cover;
+.research-split .side-photo.left{grid-area:photo1}
+.research-split .side-photo.right{grid-area:photo2}
+.research-split .split-text{grid-area:text;min-width:0}
+.research-split img{
+  width:100%;height:100%;object-fit:cover;display:block;
   border:1px solid var(--line);
 }
-@media (max-width:820px){
-  .research-intro{grid-template-columns:1fr}
-  .research-intro .stack{grid-template-columns:1fr 1fr;max-width:26rem}
+.research-split .lede{margin-bottom:1.1rem}
+
+@media (max-width:900px){
+  .research-split{
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+      "text text"
+      "photo1 photo2";
+  }
+  .research-split img{aspect-ratio:3/4;height:auto}
 }
