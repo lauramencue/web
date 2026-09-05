@@ -30,20 +30,22 @@
 <main>
 
 <!-- ====================================================================
-     RESEARCH SPLIT — lives outside .page on purpose, so it isn't capped
-     at the normal 52rem reading width. Two tall photos sit in the side
-     margins, text stays centred between them. On narrow screens the two
-     photos drop below the text instead (see the media query in
-     assets/css/style.css).
+     RESEARCH SPLIT — lives outside .page on purpose. The text column is
+     locked to the same width as the card row below it (52rem) no matter
+     how wide the screen is; the two photo columns absorb whatever space
+     is left on either side. On narrow screens all three photos drop
+     below the text instead (see the media query in assets/css/style.css).
      SWAP PHOTOS: change the src= on each <img>.
-     PHOTO CREDIT: edit the text inside each <figcaption>. Leave a
-     figcaption empty (or delete it) if a photo doesn't need a credit.
+     PHOTO CREDIT: edit the text inside a <figcaption>. Leave one empty
+     (or delete it) if a photo doesn't need a credit.
      ==================================================================== -->
 <section class="research-split">
-  <figure class="side-photo left">
-    <img src="assets/img/fieldwork-palm-left.jpg" alt="Laura Méndez examining a giant palm frond in the field">
+
+  <figure class="side-photo">
+    <img src="assets/img/fieldwork-palm-right.jpg" alt="Laura Méndez standing beneath a giant palm in the field">
     <figcaption>Photo: Vonona Randrianasolo</figcaption>
   </figure>
+
   <div class="split-text">
     <p class="lede">Research</p>
 
@@ -59,10 +61,18 @@
     functional traits, and phylogenies to assess how these affect biodiversity
     patterns, evolutionary changes, and extinctions in time and space.</p>
   </div>
-  <figure class="side-photo right">
-    <img src="assets/img/fieldwork-palm-right.jpg" alt="Laura Méndez standing beneath a giant palm in the field">
-    <figcaption>Photo: Vonona Randrianasolo</figcaption>
-  </figure>
+
+  <div class="side-stack">
+    <figure class="side-photo">
+      <img src="assets/img/herbarium1.jpg" alt="Preparing a herbarium specimen label">
+      <figcaption></figcaption>
+    </figure>
+    <figure class="side-photo">
+      <img src="assets/img/herbarium2.jpg" alt="Pressed palm herbarium sheets with handwritten field labels">
+      <figcaption></figcaption>
+    </figure>
+  </div>
+
 </section>
 <!-- ===================== end of research split ========================= -->
 

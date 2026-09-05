@@ -60,11 +60,18 @@ a{color:inherit}
    --------------------------------------------------------------------- */
 .hero{position:relative;height:min(70vh,620px);min-height:320px;overflow:hidden;background:var(--ink)}
 .hero-slide{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  position:absolute;inset:0;margin:0;
   opacity:0;animation:heroFade 24s infinite;
 }
+.hero-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-slide figcaption{
+  position:absolute;right:.75rem;bottom:.75rem;z-index:1;
+  font:400 .6875rem/1 var(--mono);letter-spacing:.02em;color:var(--paper);
+  background:rgba(23,37,31,.6);padding:.3rem .55rem;border-radius:2px;
+}
+.hero-slide figcaption:empty{display:none}
 /* four slides, each visible for one quarter of the 24s loop.
-   TO ADD A FIFTH PHOTO: add a fifth <img class="hero-slide"> in the HTML,
+   TO ADD A FIFTH PHOTO: add a fifth <figure class="hero-slide"> in the HTML,
    change 24s to 30s on .hero-slide, change 25%/21%/4% below to 20%/16%/3.2%,
    and give the new slide animation-delay:24s (nth-child(5) rule at the end). */
 .hero-slide:nth-child(1){animation-delay:0s}
@@ -245,22 +252,40 @@ p{margin:0 0 1.1rem;max-width:var(--measure)}
 
 
 /* ---------------------------------------------------------------------
-   Research split — homepage-hero-style layout for the research.html
-   intro: two tall photos in the side margins, text centred between them.
-   Lives outside .page on purpose, so it can use the full viewport width.
+   Research split — lives outside .page on purpose. The text column is
+   pinned to exactly the same width as .page's content (52rem) so it
+   always lines up with the card row below; the two photo columns take
+   up whatever space is left on either side, however wide the screen is.
    --------------------------------------------------------------------- */
 .research-split{
   display:grid;
-  grid-template-columns:minmax(9rem,18vw) minmax(0,1fr) minmax(9rem,18vw);
+  grid-template-columns:minmax(5rem,1fr) minmax(0,52rem) minmax(5rem,1fr);
   grid-template-areas:"photo1 text photo2";
   gap:clamp(1.5rem,3vw,3rem);
-  max-width:88rem;margin:0 auto;
   padding:clamp(2.5rem,6vw,4rem) clamp(1.25rem,4vw,3rem) 0;
 }
-.research-split figure.side-photo{margin:0;position:relative}
-.research-split figure.side-photo.left{grid-area:photo1}
-.research-split figure.side-photo.right{grid-area:photo2}
-.research-split .split-text{grid-area:text;min-width:0}
+.research-split .split-text{
+  grid-area:text;min-width:0;
+  /* same horizontal padding .page itself uses, so the visible text lines up
+     exactly with the card row below, not just the outer 52rem box */
+  padding-left:clamp(1.25rem,4vw,3rem);padding-right:clamp(1.25rem,4vw,3rem);
+}
+/* removes the SITE-WIDE p/.lede max-width caps so the text actually fills
+   that width instead of wrapping narrower inside it */
+.research-split .split-text p,
+.research-split .split-text .lede{max-width:none}
+.research-split .lede{margin-bottom:1.1rem}
+
+/* the single photo on the left */
+.research-split > figure.side-photo{grid-area:photo1}
+
+/* the stacked pair on the right */
+.research-split .side-stack{
+  grid-area:photo2;display:grid;grid-template-rows:1fr 1fr;gap:1rem;
+}
+
+/* shared photo styling, whether a lone figure or one inside the stack */
+.research-split figure.side-photo{margin:0;position:relative;height:100%}
 .research-split figure.side-photo img{
   width:100%;height:100%;object-fit:cover;display:block;
   border:1px solid var(--line);
@@ -271,15 +296,18 @@ p{margin:0 0 1.1rem;max-width:var(--measure)}
   background:rgba(23,37,31,.6);padding:.3rem .55rem;border-radius:2px;
 }
 .research-split figcaption:empty{display:none}
-.research-split .lede{margin-bottom:1.1rem}
 
 @media (max-width:900px){
   .research-split{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
     grid-template-areas:
-      "text text"
-      "photo1 photo2";
+      "text text text"
+      "photo1 photo2a photo2b";
+    row-gap:1.25rem;
   }
+  .research-split .side-stack{display:contents}
+  .research-split .side-stack figure:nth-child(1){grid-area:photo2a}
+  .research-split .side-stack figure:nth-child(2){grid-area:photo2b}
   .research-split figure.side-photo img{aspect-ratio:3/4;height:auto}
   .research-split figcaption{font-size:.625rem;padding:.2rem .45rem}
 }
