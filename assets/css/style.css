@@ -116,16 +116,23 @@ a{color:inherit}
   display:grid;grid-template-columns:14rem minmax(0,1fr);
   gap:clamp(2rem,5vw,3.5rem);align-items:start;margin-bottom:1.5rem;
 }
-.about .portrait{
-  width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--sage);
+.about figure.portrait{width:100%;margin:0;position:relative}
+.about figure.portrait img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--sage);
   border:1px solid var(--line);box-shadow:8px 8px 0 var(--accent);
 }
+.about figure.portrait figcaption{
+  position:absolute;right:.6rem;bottom:.6rem;
+  font:400 .6875rem/1 var(--mono);letter-spacing:.02em;color:var(--paper);
+  background:rgba(23,37,31,.6);padding:.3rem .55rem;border-radius:2px;
+}
+.about figure.portrait figcaption:empty{display:none}
 .about .links{font:400 .9375rem/1.8 var(--body);color:var(--ink-soft)}
 .about .links a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .about .links a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 @media (max-width:700px){
   .about{grid-template-columns:1fr}
-  .about .portrait{max-width:12rem}
+  .about figure.portrait{max-width:12rem}
 }
 
 /* ---------------------------------------------------------------------
