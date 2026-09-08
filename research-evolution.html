@@ -28,52 +28,74 @@
 <!-- ===================== end of top nav ================================ -->
 
 <main>
-<div class="page">
 
-  <p class="eyebrow"><a href="research.html">← Research</a></p>
-  <p class="lede">Biodiversity patterns &amp; evolution</p>
+<!-- ====================================================================
+     Same pattern as research.html: everything (text + cards) lives in the
+     locked-width center column so it matches the site's normal reading
+     width; the photo on the right stretches to match that column's full
+     height, filling what would otherwise be empty margin.
+     "right-only" = no photo on the left this time, just one on the right.
+     SWAP PHOTO: change the src on the <img> line.
+     PHOTO CREDIT: edit the text inside the <figcaption>, or leave it
+     empty (or delete it) if it doesn't need a credit.
+     ==================================================================== -->
+<section class="research-split right-only">
 
-  <h2>Highlighted past, present and future research</h2>
+  <div class="split-text">
+    <p class="eyebrow"><a href="research.html">← Research</a></p>
+    <p class="lede">Biodiversity patterns &amp; evolution</p>
 
-  <!-- TO CHANGE A CARD: swap the img src, the title/status/blurb text, and
-       the href (or remove the <a> wrapper entirely for work with no public
-       link yet — see the second card below for that pattern). -->
-  <div class="research-lines">
+    <h2>Highlighted past, present and future research</h2>
 
-    <a class="rline" href="https://nsojournals.onlinelibrary.wiley.com/doi/full/10.1111/ecog.05885" target="_blank" rel="noopener">
-      <img src="assets/img/megafrugivores.png" alt="Figure 1 from Méndez et al. 2022">
-      <p class="status">Méndez et al. 2022 · Ecography</p>
-      <h3>Megafrugivores as fading shadows of the past</h3>
-      <p>Do Madagascar's extinct giant lemurs and elephant birds still shape
-      teh current distribution of palms today? Their signature is there — but living
-      frugivores and the environment matter more.</p>
-    </a>
+    <!-- TO CHANGE A CARD: swap the img src, the title/status/blurb text, and
+         the href (or remove the <a> wrapper entirely for work with no public
+         link yet — see the second card below for that pattern). -->
+    <div class="research-lines">
 
-    <div class="rline no-link">
-      <img src="assets/img/Figure4_R_v3.jpg" alt="Figure 4 from Méndez et al. 2026">
-      <p class="status">Soon in Annals of Botany</p>
-      <h3>Host identity outweighs substrate use in structuring root-associated
-      fungal communities in a neotropical rainforest</h3>
-      <p>Sampling roots from epiphytic and terrestrial individuals across four
-      plant families in a Peruvian cloud forest, we found that which fungi
-      colonise a root depends far more on the host plant's identity than on
-      whether that plant roots in the canopy or in the ground.</p>
+      <a class="rline" href="https://nsojournals.onlinelibrary.wiley.com/doi/full/10.1111/ecog.05885" target="_blank" rel="noopener">
+        <img src="assets/img/megafrugivores.png" alt="Figure 1 from Méndez et al. 2022">
+        <p class="status">Méndez et al. 2022 · Ecography</p>
+        <h3>Megafrugivores as fading shadows of the past</h3>
+        <p>Do Madagascar's extinct giant lemurs and elephant birds still shape
+        teh current distribution of palms today? Their signature is there — but living
+        frugivores and the environment matter more.</p>
+      </a>
+
+      <div class="rline no-link">
+        <img src="assets/img/Figure4_R_v3.jpg" alt="Figure 4 from Méndez et al. 2026">
+        <p class="status">Coming soon</p>
+        <h3>Host identity outweighs substrate use in structuring root-associated
+        fungal communities in a neotropical rainforest</h3>
+        <p>Sampling roots from epiphytic and terrestrial individuals across four
+        plant families in a Peruvian cloud forest, we found that which fungi
+        colonise a root depends far more on the host plant's identity than on
+        whether that plant roots in the canopy or in the ground.</p>
+      </div>
+
+      <div class="rline no-link">
+        <img src="assets/img/card-epiphyte-tree.jpg" alt="Circular phylogeny of vascular plants coloured by epiphyte value">
+        <p class="status">In preparation</p>
+        <h3>The evolution of epiphytism across the plant tree of life</h3>
+        <p>Epiphytism — living rooted on another plant rather than in soil — has
+        evolved independently again and again, from ferns to orchids. We're
+        mapping where and how often, across a genus-level phylogeny spanning
+        nearly 12,000 vascular plant lineages.</p>
+      </div>
+
     </div>
 
-    <div class="rline no-link">
-      <img src="assets/img/card-epiphyte-tree.jpg" alt="Circular phylogeny of vascular plants coloured by epiphyte value">
-      <p class="status">In preparation</p>
-      <h3>The evolution of epiphytism across the plant tree of life</h3>
-      <p>Epiphytism — living rooted on another plant rather than in soil — has
-      evolved independently again and again, from ferns to orchids. We're
-      mapping where and how often, across a genus-level phylogeny spanning
-      nearly 12,000 vascular plant lineages.</p>
-    </div>
+    <p class="foot">
+      Published with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    </p>
+  </div>
 
-  <p class="foot">
-    Published with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
-  </p>
-</div>
+  <figure class="side-photo">
+    <img src="assets/img/fieldwork-palm-right.jpg" alt="Laura Méndez standing beneath a giant palm in the field">
+    <figcaption>Photo: Vonona Randrianasolo</figcaption>
+  </figure>
+
+</section>
+
 </main>
 
 <script src="assets/js/site.js" defer></script>
