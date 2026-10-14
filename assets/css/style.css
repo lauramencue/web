@@ -116,23 +116,16 @@ a{color:inherit}
   display:grid;grid-template-columns:14rem minmax(0,1fr);
   gap:clamp(2rem,5vw,3.5rem);align-items:start;margin-bottom:1.5rem;
 }
-.about figure.portrait{width:100%;margin:0;position:relative}
-.about figure.portrait img{
-  width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--sage);
+.about .portrait{
+  width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--sage);
   border:1px solid var(--line);box-shadow:8px 8px 0 var(--accent);
 }
-.about figure.portrait figcaption{
-  position:absolute;right:.6rem;bottom:.6rem;
-  font:400 .6875rem/1 var(--mono);letter-spacing:.02em;color:var(--paper);
-  background:rgba(23,37,31,.6);padding:.3rem .55rem;border-radius:2px;
-}
-.about figure.portrait figcaption:empty{display:none}
 .about .links{font:400 .9375rem/1.8 var(--body);color:var(--ink-soft)}
 .about .links a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .about .links a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 @media (max-width:700px){
   .about{grid-template-columns:1fr}
-  .about figure.portrait{max-width:12rem}
+  .about .portrait{max-width:12rem}
 }
 
 /* ---------------------------------------------------------------------
@@ -283,8 +276,10 @@ p{margin:0 0 1.1rem;max-width:var(--measure)}
 .research-split .split-text .lede{max-width:none}
 .research-split .lede{margin-bottom:1.1rem}
 
-/* the single photo on the left */
+/* the single photo on the left, and (when there's a lone photo on the
+   right instead of a stacked pair) the single photo on the right */
 .research-split > figure.side-photo{grid-area:photo1}
+.research-split > figure.side-photo.right{grid-area:photo2}
 
 /* the stacked pair on the right */
 .research-split .side-stack{
@@ -304,19 +299,37 @@ p{margin:0 0 1.1rem;max-width:var(--measure)}
 }
 .research-split figcaption:empty{display:none}
 
-@media (max-width:900px){
+/* Below this, the side-margin columns no longer have room to show a photo
+   at a readable size (they'd be squeezed into a thin, heavily-cropped
+   strip while still being stretched to the full height of the text next
+   to them) — so the photos drop below the text instead. This covers
+   laptop-width windows, not just phones: on a non-maximised laptop
+   window the margins the photos would get are the problem, even though
+   the exact same page looks fine maximised on a big monitor. */
+@media (max-width:1480px){
   .research-split{
-    grid-template-columns:1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr;
     grid-template-areas:
-      "text text text"
-      "photo1 photo2a photo2b";
+      "text text"
+      "photo1 photo2";
     row-gap:1.25rem;
   }
-  .research-split .side-stack{display:contents}
-  .research-split .side-stack figure:nth-child(1){grid-area:photo2a}
-  .research-split .side-stack figure:nth-child(2){grid-area:photo2b}
+  .research-split .side-stack{
+    grid-template-rows:none;grid-template-columns:1fr 1fr;
+  }
   .research-split figure.side-photo img{aspect-ratio:3/4;height:auto}
   .research-split figcaption{font-size:.625rem;padding:.2rem .45rem}
+}
+
+@media (max-width:620px){
+  .research-split{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "text"
+      "photo1"
+      "photo2";
+  }
+  .research-split .side-stack{grid-template-columns:1fr 1fr}
 }
 
 /* ---------------------------------------------------------------------
@@ -328,7 +341,7 @@ p{margin:0 0 1.1rem;max-width:var(--measure)}
    --------------------------------------------------------------------- */
 .research-split.single-photo .side-photo{grid-area:photo2}
 
-@media (max-width:900px){
+@media (max-width:1480px){
   .research-split.single-photo{
     grid-template-columns:1fr;
     grid-template-areas:
